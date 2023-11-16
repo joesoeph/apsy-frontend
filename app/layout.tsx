@@ -1,6 +1,7 @@
 'use client';
 
 import { Footer } from '@/components/Footer/Footer';
+import { Providers } from '@/components/Globals/Providers/Providers';
 import { Navbar } from '@/components/Navbar/Navbar';
 import { Sidebar } from '@/components/Sidebar/Sidebar';
 import { fontSans } from '@/config/fonts';
@@ -10,7 +11,6 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import clsx from 'clsx';
 import { ReactNode, createContext, useState } from 'react';
-import { Providers } from './providers';
 
 config.autoAddCss = false; /* eslint-disable import/first */
 
