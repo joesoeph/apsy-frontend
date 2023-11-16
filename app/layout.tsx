@@ -8,6 +8,7 @@ import '@/styles/globals.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import clsx from 'clsx';
+import { Metadata } from 'next';
 import { ReactNode } from 'react';
 
 config.autoAddCss = false; /* eslint-disable import/first */
@@ -36,32 +37,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head />
       <body
         className={clsx(
-          'min-h-screen bg-background font-sans antialiased',
+          'bg-background font-sans antialiased',
           fontSans.variable,
         )}
       >
         <Providers themeProps={{ attribute: 'class', defaultTheme: 'dark' }}>
           <Navbar />
-          <div className="flex">
+          <div className="flex h-screen pt-[72px]">
             <Sidebar />
-            <div
-              className={clsx(
-                'relative',
-                'flex',
-                'min-h-screen',
-                'flex-col',
-                'bg-amber-400',
-                'grow',
-              )}
-            >
-              <main className="grow bg-violet-300 p-4">
-                <div className="mt-12"></div>
-                {children}
-                {items.map((item) => {
-                  return <p key={item}>Content {item}</p>;
-                })}
-              </main>
-              <Footer />
+            <div className="relative flex w-full flex-row overflow-y-auto overscroll-y-contain bg-red-200">
+              <div className="relative flex w-full flex-col bg-amber-400">
+                <main className="relative bg-violet-300 p-4">
+                  {children}
+                  {items.map((item) => {
+                    return <p key={item}>Content {item}</p>;
+                  })}
+                </main>
+                <Footer />
+              </div>
             </div>
           </div>
         </Providers>
