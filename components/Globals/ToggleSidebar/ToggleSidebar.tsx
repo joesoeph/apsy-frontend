@@ -7,7 +7,7 @@ import { Button } from '@nextui-org/button';
 import { useContext } from 'react';
 
 export const ToggleSidebar = () => {
-  const { isDisplaySidebar, toggleSidebar } = useContext(SidebarDisplayContext);
+  const { toggleSidebar } = useContext(SidebarDisplayContext);
   return (
     <>
       <Button
@@ -18,7 +18,6 @@ export const ToggleSidebar = () => {
       >
         <FontAwesomeIcon icon={faBars} />
       </Button>
-      <p>{isDisplaySidebar ? 'shown' : 'hidden'}</p>
     </>
   );
 };
