@@ -1,15 +1,12 @@
 'use client';
-
-import { SidebarContext } from '@/app/layout';
+import { SidebarDisplayContext } from '@/components/Globals/Providers/SidebarDisplayProvider';
 import clsx from 'clsx';
 import { useContext } from 'react';
 
 export const Sidebar = () => {
   const items = Array.from({ length: 100 }, (v, i) => i + 1);
+  const { isDisplaySidebar } = useContext(SidebarDisplayContext);
 
-  const { isDisplaySidebar } = useContext(SidebarContext);
-
-  // className="fixed top-0 z-10 h-screen w-[200px] overflow-y-auto overscroll-contain bg-emerald-400 p-4"
   return (
     <nav
       className={clsx(
