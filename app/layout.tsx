@@ -1,17 +1,13 @@
 import { Footer } from '@/components/Footer/Footer';
-import { Providers } from '@/components/Globals/Providers/Providers';
 import { Navbar } from '@/components/Navbar/Navbar';
 import { Sidebar } from '@/components/Sidebar/Sidebar';
 import { fontSans } from '@/config/fonts';
 import { siteConfig } from '@/config/site';
+import { Providers } from '@/providers/Providers';
 import '@/styles/globals.css';
-import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import clsx from 'clsx';
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
-
-config.autoAddCss = false; /* eslint-disable import/first */
 
 export const metadata: Metadata = {
   title: {
@@ -47,7 +43,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <Sidebar />
             <div className="relative flex w-full flex-row overflow-y-auto overscroll-y-contain bg-red-200">
               <div className="relative flex w-full flex-col bg-amber-400">
-                <main className="relative bg-violet-300 p-4">
+                <main className="relative bg-background p-4">
                   {children}
                   {items.map((item) => {
                     return <p key={item}>Content {item}</p>;

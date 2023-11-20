@@ -14,7 +14,7 @@ import NextLink from 'next/link';
 
 export const Navbar = () => {
   return (
-    <header className="fixed top-0 z-20 flex w-full items-center justify-between bg-background p-4">
+    <header className="fixed top-0 z-20 flex w-full items-center justify-between bg-background p-4 shadow-lg">
       <ToggleSidebar />
 
       <NextLink className="flex items-center justify-start gap-1" href="/">

@@ -1,6 +1,3 @@
-
-export default function Home() {
-	return (
-		<p>Hello World!</p>
-	);
+export default function Dashboard() {
+  return <p>Dashboard</p>;
 }

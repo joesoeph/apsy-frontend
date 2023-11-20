@@ -1,6 +1,6 @@
 'use client';
 
-import SidebarDisplayProvider from '@/components/Globals/Providers/SidebarDisplayProvider';
+import SidebarDisplayProvider from '@/providers/SidebarDisplayProvider';
 import { NextUIProvider } from '@nextui-org/system';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { ThemeProviderProps } from 'next-themes/dist/types';

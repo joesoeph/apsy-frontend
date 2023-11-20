@@ -1,13 +1,12 @@
 'use client';
 
-import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { SwitchProps, useSwitch } from '@nextui-org/switch';
 import { useIsSSR } from '@react-aria/ssr';
 import { VisuallyHidden } from '@react-aria/visually-hidden';
 import clsx from 'clsx';
 import { useTheme } from 'next-themes';
 import { FC } from 'react';
+import { BrightnessHighFill, MoonFill } from 'react-bootstrap-icons';
 
 export interface ThemeSwitchProps {
   className?: string;
@@ -58,7 +57,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         className={slots.wrapper({
           class: clsx(
             [
-              'w-auto h-auto',
+              'h-auto w-auto',
               'bg-transparent',
               'rounded-lg',
               'flex items-center justify-center',
@@ -73,9 +72,9 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         })}
       >
         {!isSelected || isSSR ? (
-          <FontAwesomeIcon icon={faSun} size='lg' />
+          <BrightnessHighFill size={20} />
         ) : (
-          <FontAwesomeIcon icon={faMoon} size='lg' />
+          <MoonFill size={20} />
         )}
       </div>
     </Component>
