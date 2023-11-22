@@ -13,8 +13,8 @@ export async function loginAction(previousState, formData) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email,
-        password,
+        // email,
+        // password,
       }),
     },
   );
@@ -27,8 +27,9 @@ export async function loginAction(previousState, formData) {
     cookies().set('token', responseBody.accessToken, {
       httpOnly: true,
     });
-    return 'success';
+    return null;
   } else {
-    return 'failed';
+    console.log(responseBody);
+    return responseBody;
   }
 }
